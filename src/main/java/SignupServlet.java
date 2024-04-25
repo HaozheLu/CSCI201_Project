@@ -61,9 +61,7 @@ public class SignupServlet extends HttpServlet {
 			String myString = "jdbc:mysql://localhost/CSCI201_Project?user=root";
 			conn = DriverManager.getConnection(myString);
 			st = conn.createStatement();
-			// rs = st.executeQuery("SELECT * from Student where fname='" + name + "'");
-			/* Start Query help form chatgpt */
-			String sql = "INSERT INTO Users (uname, pword, email) VALUES (?, ?, ?, ?)";
+			String sql = "INSERT INTO Users (email, username, password) VALUES (?, ?, ?)";
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, username);
             ps.setString(2, password);

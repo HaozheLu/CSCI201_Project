@@ -47,18 +47,15 @@ public class LoginServlet extends HttpServlet {
 			// In that case, also remove throws ClassNotFoundException
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			
-			String myString = "jdbc:mysql://localhost/Assignment4?user=root";
+			String myString = "jdbc:mysql://localhost/CSCI201_Project?user=root";
 			conn = DriverManager.getConnection(myString);
 			st = conn.createStatement();
 			PrintWriter out = response.getWriter();
-			// rs = st.executeQuery("SELECT * from Student where fname='" + name + "'");
-			/* Start Query help form chatgpt */
-		    String sql = "SELECT * FROM Users WHERE uname = ? AND pword = ?";
+		    String sql = "SELECT * FROM Users WHERE username = ? AND password = ?";
 		    ps = conn.prepareStatement(sql);
 		    ps.setString(1, username);
 		    ps.setString(2, password);
             rs = ps.executeQuery();
-            /* End Query help form chatgpt */
 
             if (rs.next()) // login capable
             {
