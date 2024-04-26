@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Recipe Recommendation</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+        #recipe-display{
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+        #recipe-display > *{
+            margin-left: auto;
+            margin-right: auto;
+            color: white;
+        }
+        #recipe-image{
+            width: 100%;
+            height: auto;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body style="background-color: #990000;">
+
+    <menu id="nav" class="row">
+        <li class="col-3 text-center fs-4"><a href="welcome.html">USC Meal Planner</a></li>
+        <li class="col-9"></li>
+    </menu>
+
+    <div id="page" class="container text-center">
+        <div id="main" class="mb-3 ms-3 me-3">
+            <div class="text-center fs-2" style="color: white;">
+                <p>Recipe Recommendation</p>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; width: 40%; margin-left:auto; margin-right: auto;">
+                <a class="btn btn-warning" id="prev-recipe">Previous Recipe</a>
+                <a class="btn btn-warning" id="next-recipe">Next Recipe</a>
+            </div>
+            <div id="recipe-display">
+                <img src="" alt="image of recipe food" id="recipe-image">
+                <h2 id="recipe-name">Name of Dish</h2>
+                <p id="recipe-description">Brief Description of recipe</p>
+                <h3>Ingredients</h3>
+                <ul id="recipe-ingredients">
+                </ul>
+                <h4>Dietary Preferences</h4>
+                <div id="recipe-preferences" style="display: flex;">
+                </div>
+                <h4>Calories: </h4>
+                <a class="btn btn-warning" id="view-rcipe" style="color: black;">View Recipe</a>
+                <ol id="recipe-steps" style="display: none;">
+
+                </ol>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
