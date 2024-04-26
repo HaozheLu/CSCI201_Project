@@ -1,0 +1,12 @@
+#main{
+    margin-top: 100px;
+}
+
+#nav{
+    list-style: none;
+}
+
+#nav a{
+    color: white;
+    text-decoration: none;
+}
