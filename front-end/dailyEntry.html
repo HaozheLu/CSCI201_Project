@@ -16,8 +16,19 @@
             margin-right: auto;
             text-align: right;
             color: white;
-            border-collapse: separate;
-            border-spacing: 16px;
+            
+        }
+        #meal-entry{
+            display: none;
+        }
+        #workout-entry{
+            display: none;
+        }
+        form{
+            color: white;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: right;
         }
     </style>
 </head>
@@ -35,32 +46,54 @@
                 <p>Daily Entry</p>
                 <p id="date">April 26, 2024</p>
             </div>
+        </div>
 
-            <table  id="daily-entry">
-                <tr>
-                    <th>Meal:</th>
-                    <td><input type="text"></td>
-                </tr>
-                <tr>
-                    <th>Calories Consumed:</th>
-                    <td><input type="number"></td>
-                </tr>
-                <tr>
-                    <th>Workout:</th>
-                    <td><input type="text"></td>
-                </tr>
-                
-                <tr>
-                    <th>Calories Burned:</th>
-                    <td><input type="number"></td>
-                </tr>
-            </table>
-
-            <a class="btn btn-warning" id="prev-recipe">Submit Entry</a>
-
+        <div style="display:flex; justify-content:space-between; width: 80%; margin-left:auto; margin-right: auto;">
+            <p class="btn btn-warning" style="width: 25%;" id="display-meal">Enter Meal</p>
+            <p class="btn btn-warning" style="width: 25%;" id="display-workout">Enter Workout</p>
         </div>
     </div>
 
+    <div style="width: 50%; margin-left: auto; margin-right: auto;">
+        <form id="meal-entry" action="MealEntry" method="post">
+            <p>
+                <label for="mealName">Meal:</label>
+                <input type="text" name="mealName" id="mealName" required>
+            </p>
+            <p>
+                <label for="caloriesConsumed">Calories Consumed:</label>
+                <input type="number" name="caloriesConsumed" required>
+            </p>
+            <button type="submit" class="btn btn-warning">Submit</button>
+        </form>
+        
+    
+        <form  id="workout-entry" action="ExerciseEntry" method="post">
+                
+            <p>
+                <label for="workoutName">Workout:</label>
+                <input type="text"  name="workoutName">
+            </p>
+            
+            <p>
+                <label for="caloriesBurned">Calories Burned:</th>
+                <input type="number" name="caloriesBurned" id="caloriesBurned">
+            </p>
+            <button type="submit" class="btn btn-warning">Submit</button>
+        </table>
+    </div>
+
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+            <script>
+                $('#display-meal').click(function(){
+                    $('#meal-entry').css('display','table');
+                    $('#workout-entry').css('display','none');
+                });
+                $('#display-workout').click(function(){
+                    $('#meal-entry').css('display','none');
+                    $('#workout-entry').css('display','table');
+                });
+            </script>
 </body>
 
 </html>
